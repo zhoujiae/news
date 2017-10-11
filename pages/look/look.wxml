@@ -1,0 +1,23 @@
+<!--pages/look/look.wxml-->
+<view class="cont">
+  <view wx:for="{{audioList}}" wx:key="{{index}}" id="{{index}}" bindtap="go_lookDetail" data-id="{{item.id}}">
+    <view class="box" id="{{index}}"
+        hover-class="list-one-choose"
+        bindtap="bindTapChoose">
+       <view class="left">
+         <image src="{{item.fengmian}}" class="t_img"></image>
+       </view>
+       <view class="right">
+         <view class="top title">{{item.title}}</view>
+         <view class="bottom">
+           <view class="author">{{item.laiyuan}}</view>
+           <view class="play">
+             <image src="../../images/read.png" class="p_img"></image>
+             <text class="num">{{item.addtime}}</text>
+           </view> 
+         </view>
+       </view>
+     </view>
+  </view>
+</view>
+

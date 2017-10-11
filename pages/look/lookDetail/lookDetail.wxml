@@ -1,0 +1,11 @@
+<import src="../../../wxParse/wxParse.wxml"/> 
+<view class="container">
+  <view class="title">{{lookdetail.title}}</view>
+  <view class="time">{{lookdetail.addtime}}</view>
+  <view class="img"><image wx:if="{{lookdetail.fengmian}}" src="{{lookdetail.fengmian}}" bindload="imageLoad" data-index="{{ index }}" 
+style="width:{{ images.width }}rpx; height:{{ images.height }}rpx;"></image></view>
+  <view class="content">
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+  </view>
+  <view class="laiyuan">来源: {{lookdetail.laiyuan}}</view>
+</view>

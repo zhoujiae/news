@@ -1,0 +1,45 @@
+
+.box {
+  width: 100%;
+  height: 200rpx;
+  padding: 15rpx 0 10rpx;
+  display: flex;
+  justify-content: space-around;
+  font-size: 26rpx;
+}
+.left, .right {
+  width: 24%;
+  vertical-align: middle;
+  padding: 25rpx 0 16rpx;
+}
+.right {
+  width: 70%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+}
+.title {
+  line-height: 34rpx;
+}
+.bottom {
+  width: 100%;
+  display: flex;
+  color: gray;
+  flex-direction: row;
+  justify-content: space-between;
+ 
+}
+.play, .p_img, .num{
+  vertical-align: middle;
+}
+
+.t_img {
+  width: 160rpx;
+  height: 160rpx;
+}
+.p_img {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 4px;
+}

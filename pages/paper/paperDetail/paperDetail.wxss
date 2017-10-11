@@ -1,0 +1,33 @@
+@import "../../../wxParse/wxParse.wxss";
+.container {
+  width: 96%;
+  margin: 0 auto;
+}
+.title {
+  padding-top: 40rpx;
+  width: 100%;
+  font-weight: bolder;
+  text-align: left;
+  font-size: 35rpx;
+}
+.time {
+  width: 100%;
+  text-align: left;
+  font-size: 25rpx;
+  color: gray;
+  padding-bottom: 40rpx;
+}
+.content {
+  padding-top: 20rpx;
+  width: 100%;
+  text-indent: 2em;
+  font-size: 28rpx;
+}
+.laiyuan {
+  width: 100%;
+  color: #008aff;
+  text-align: right;
+  font-size:25rpx;
+  margin-top:20rpx;
+  padding-bottom: 40rpx;
+}

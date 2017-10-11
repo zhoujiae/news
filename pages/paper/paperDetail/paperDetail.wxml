@@ -1,0 +1,12 @@
+<import src="../../../wxParse/wxParse.wxml"/> 
+<view class="container">
+  <!-- 标题 -->
+  <view class="title">{{paperDetail.title}}</view>
+  <!-- 副标题 -->
+  <view class="time">{{paperDetail.subtitle}}</view>
+  <!-- 内容 -->
+  <view class="content">
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+  </view>
+  <view class="laiyuan">来源: {{paperDetail.source}}</view>
+</view>

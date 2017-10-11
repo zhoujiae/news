@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/look/look",
+    "pages/paper/paper",
+    "pages/play/play",
+    "pages/logs/logs",
+    "pages/look/lookDetail/lookDetail",
+    "pages/paper/paperDetail/paperDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#008aff",
+    "navigationBarTitleText": "掌上听",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#93cbff",
+    "selectedColor": "#008aff",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "掌上听",
+        "iconPath": "images/t.png",
+        "selectedIconPath": "images/t1.png"
+      },
+      {
+        "pagePath": "pages/look/look",
+        "text": "掌上看",
+        "iconPath": "images/k.png",
+        "selectedIconPath": "images/k1.png"
+      },
+      {
+        "pagePath": "pages/paper/paper",
+        "text": "掌上报",
+        "iconPath": "images/b.png",
+        "selectedIconPath": "images/b1.png"
+      }
+    ]
+  }
+}

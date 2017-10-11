@@ -1,0 +1,72 @@
+<!--pages/play/play.wxml-->
+<view class="container">
+  <!--第一层层：背景图背景图，高斯模糊-->
+  <view class="bg">
+    <image class="poster" mode="scaleToFill" wx:if="{{audioList[audioIndex].fengmian}}" src="{{audioList[audioIndex].fengmian}}"></image>
+  </view>
+  <!--第二层层：灰色蒙层-->
+  <view class="bg-gray">
+  </view>
+  <!--第三层：player层-->
+  <view >
+    <!--旋转图-->
+    <view class="rotate-disk-container">
+      <view class="rotate-disk {{pauseStatus === false ? 'rotate-360' : 'rotate-360-paused'}}">
+        <image class="poster" wx:if="{{audioList[audioIndex].fengmian}}" src="{{audioList[audioIndex].fengmian}}"></image>
+      </view>
+    </view>
+    <!--操作-->
+    <view class="title-container">
+      <view class="title-left"></view>
+      <view class="text">
+        <view><text class="name">{{audioList[audioIndex].title}}</text></view>
+        <view><text class="name">{{audioList[audioIndex].zuozhe}}</text></view>
+        <!--<view><text class="author">-- {{audioList[audioIndex].author}} --</text></view>-->
+      </view>
+    </view>
+    <view class="slider-container">
+      <text class="slider-time">{{currentPosition}}</text>
+      <slider
+          value="{{sliderValue}}"
+          bindchange="bindSliderchange"
+          activeColor="#13beec"
+          style="width: 62%;margin: 0;"
+        />
+      <text class="slider-time">{{duration}}</text>
+    </view>
+    <view class="operation-container">
+      <image src="../../images/prev.png" class="icon-prev" bindtap="bindTapPrev"></image>
+      <image
+        src="{{pauseStatus === false ? '../../images/pause.png' : '../../images/play.png'}}"
+        class="icon-play" bindtap="bindTapPlay"
+        >
+        </image>
+      <image src="../../images/next.png" class="icon-next" bindtap="bindTapNext"></image>
+    </view>
+  </view>
+  <!--第五层：列表页-->
+  <!--<scroll-view
+    class="list"
+    scroll-y 
+    scroll-top="{{audioIndex * 68}}"
+    >
+    <view wx:for="{{audioList}}" wx:key="{{index}}">
+      <view
+        id="{{index}}"
+        class="list-one {{index === audioIndex ? 'list-one-choose' : ''}}"
+        hover-class="list-one-choose"
+        bindtap="bindTapChoose"
+        >
+        <view class="name">
+          <text class="list-index">{{index}}</text>
+        </view>
+        <image class="list-one-poster" src="{{item.poster}}"></image>
+        <view class="list-one-right">
+          <view class="name">{{item.name}}</view>
+         
+        <!--</view>
+      </view>
+    </view>
+  </scroll-view>-->
+  <!--<audio id="audio" src="{{audioList[audioIndex].src}}" style="display: none"></audio>-->
+</view>

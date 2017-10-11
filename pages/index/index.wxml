@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="cont">
+  <view wx:for="{{audioList}}" wx:key="{{index}}" id="{{index}}" bindtap="goToPlayView" data-id="{{item.id}}">
+    <view class="box" id="{{index}}"
+        hover-class="list-one-choose"
+        bindtap="bindTapChoose">
+       <view class="left">
+         <image src="{{item.fengmian}}" class="t_img"></image>
+       </view>
+       <view class="right">
+         <view class="top title">{{item.title}}</view>
+         <view class="bottom">
+           <view class="author">{{item.zuozhe}}</view>
+           <view class="play">
+             <image src="../../images/play1.png" class="p_img"></image>
+             <text class="num">{{item.play_count}}</text>
+           </view> 
+         </view>
+       </view>
+     </view>
+  </view>
+</view>
