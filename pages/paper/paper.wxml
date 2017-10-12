@@ -1,7 +1,7 @@
 <view class="container">
   <!-- 报纸展示 -->
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{Dbaozhi}}" wx:for-index="index">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current="{{index}}">
+    <block wx:for="{{Dbaozhi}}">
       <swiper-item>
         <image src="{{item.banmian_url}}" wx:if="{{item.banmian_url}}" class="slide-image" style="width:100%; height:100%;"></image>
         <!-- 点击盒子 -->
@@ -16,6 +16,17 @@
       <picker mode="date" name="newsDate" value="{{date}}" start="2017-09-08" end="2070-09-1" bindchange="bindDateChange">
         <view class="picker">
           往期
+        </view>
+      </picker>
+    </form>
+  </view>
+  <!-- 版面选择 -->
+  <view class="section section1">
+    <view class="filter"></view>
+    <form bindsubmit="formSubmit">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          版面
         </view>
       </picker>
     </form>

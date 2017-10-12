@@ -14,7 +14,10 @@ Page({
     interval: 5000,
     duration: 500,
     // 控制显示隐藏
-    showHide: false
+    showHide: false,
+    // 存储版面
+    array: [],
+    index: 0
   },
   // 点击显示盒子
   showBox: function () {
@@ -37,15 +40,16 @@ Page({
       },
       success: function (res) {
         console.log("当前日期报纸数据", res.data.errMsg);
-        // var length = res.data.errMsg.length
-        // var boxarr = []
-        // console.log("数组长度", length)
-        // for (var i = 0; i < length; i++) {
-        //   boxarr.push(res.data.errMsg[i].box)
-        // }
-        // console.log("当前日期报纸盒子数据", boxarr);
+        var length = res.data.errMsg.length
+        var namearr = []
+        console.log("数组长度", length)
+        for (var i = 0; i < length; i++) {
+          namearr.push(res.data.errMsg[i].banmian_name)
+        }
+        console.log(namearr)
         that.setData({
           Dbaozhi: res.data.errMsg,
+          array: namearr
         })
       }
     })
@@ -62,7 +66,7 @@ Page({
   // },
   // 日期发生改变
   bindDateChange: function (e) {
-    console.log('picker发送选择改变，当前日期为', e.detail.value)
+    console.log('picker日期发送选择改变，当前日期为', e.detail.value)
     this.setData({
       date: e.detail.value
     })
@@ -78,11 +82,26 @@ Page({
         "Content-Type": 'application/json'
       },
       success: function (res) {
+        var length = res.data.errMsg.length
+        var namearr = []
+        console.log("数组长度", length)
+        for (var i = 0; i < length; i++) {
+          namearr.push(res.data.errMsg[i].banmian_name)
+        }
+        console.log(namearr)
         that.setData({
-          Dbaozhi: res.data.errMsg
+          Dbaozhi: res.data.errMsg,
+          array: namearr
         })
         console.log("往期报纸数据", res);
       }
+    })
+  },
+  // 版面改变
+  bindPickerChange: function (e) {
+    console.log('picker版面选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
     })
   },
   // 跳转详情

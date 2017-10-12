@@ -3,7 +3,7 @@
   color: white;
   position:fixed;
   right:15rpx;
-  bottom:20rpx;
+  bottom:3%;
   width:80rpx;
   height:80rpx;
   text-align:center;
@@ -11,6 +11,10 @@
   border-radius:100%;
   font-size:25rpx;
   border:1rpx solid lightgray;
+}
+.section1 {
+  right:15rpx;
+  bottom:13%;
 }
 .filter {
   position: absolute;
